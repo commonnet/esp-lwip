@@ -545,8 +545,8 @@ ip_napt_find(u8_t proto, u32_t addr, u16_t port, u16_t mport, u8_t dest)
 			   (dest ? "dest" : "src"),
 			   ((const u8_t*) (&addr))[0], ((const u8_t*) (&addr))[1],
 			   ((const u8_t*) (&addr))[2], ((const u8_t*) (&addr))[3],
-			   PP_HTONS(port),
-			   PP_HTONS(mport)));
+			   (u16_t)PP_HTONS(port),
+			   (u16_t)PP_HTONS(mport)));
 #if NAPT_DEBUG
   napt_debug_print();
 #endif
